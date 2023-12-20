@@ -21,7 +21,13 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-
+    animation: colorful 30s linear infinite; /*eredménye a szín váltakozása x-másodperces átfutással, vételenítve*/
+}
+/* animáció meghatározása ill 360 fokban forgatva, szín/árnyalat váltakozás*/
+@keyframes colorful{
+    100%{
+        filter: hue-rotate(360deg);
+    }
 }
 
 .bar-masodperc,

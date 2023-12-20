@@ -1,6 +1,5 @@
 const oraSzamok = document.querySelector(".szamokAzOran");
 const barMasodperc = document.querySelector(".bar-masodperc");
-
 const numberElement = [];
 const barElement = [];
 
@@ -32,8 +31,8 @@ const masodpercMutato = document.querySelector(".masodperc.mutato");
 function pontosIdo(){
     let datum = new Date();
    
-    let pontosIdoOrak = datum.getMinutes();
-    let pontosIdoPercek = datum.getSeconds();
+    let pontosIdoOrak = datum.getHours();
+    let pontosIdoPercek = datum.getMinutes();
     let pontosIdoMasodpercek = datum.getSeconds();
 //Létrehozzuk a dátumot az órák, percek, másodpercek alapján "elkapva"
 //60 másodperc = 360 fok, tehét egy másodper 360/60=6 fok, ugyan így a másodperc is
@@ -46,4 +45,8 @@ function pontosIdo(){
 //másodperc léptetése 6 fokkal szorozva, majd meghívjuk a pontoIdo függvényt. 
 }
 
+//meghívom a függvényt és az 52.sorban az Intervalban elhelyezve 1000milsec=1másodperc sebességgel folyamatossá teszem a megjelenítést
 pontosIdo();
+
+
+setInterval(pontosIdo, 1000);
